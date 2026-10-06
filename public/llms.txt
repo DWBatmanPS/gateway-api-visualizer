@@ -2,7 +2,7 @@
 
 > A local-first browser workbench for auditing Kubernetes Gateway API manifests against pinned CRDs and inspecting resource relationships.
 
-Gateway API Visualizer 1.0.0 parses and audits YAML or JSON in the active browser tab. The application itself does not upload raw manifests. When WebMCP tools are invoked, their inputs and outputs are delivered to the invoking agent and may include manifest-derived values or a selected original resource. The selected release controls CRD schema diagnostics and the published feature catalog. Relationship coverage is a local structural preview, not proof of Kubernetes admission or controller acceptance.
+Gateway API Visualizer 1.1.0 parses and audits YAML or JSON in the active browser tab. The application itself does not upload raw manifests. When WebMCP tools are invoked, their inputs and outputs are delivered to the invoking agent and may include manifest-derived values or a selected original resource. The selected release controls CRD schema diagnostics and the published feature catalog. Relationship coverage is a local structural preview, not proof of Kubernetes admission or controller acceptance.
 
 ## Canonical links
 

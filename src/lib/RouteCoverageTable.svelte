@@ -50,10 +50,10 @@
   }
 
 
-  function sortLabel(column: RouteSortColumn) {
+  function sortLabel(column: RouteSortColumn, activeColumn: RouteSortColumn, direction: 'asc' | 'desc') {
     const label = routeCoverageColumns.find(value => value.key === column)!.label.toLowerCase();
-    if (sortCol !== column) return `Sort by ${label} ascending`;
-    return `Sort by ${label} ${sortDir === 'asc' ? 'descending' : 'ascending'}`;
+    if (activeColumn !== column) return `Sort by ${label} ascending`;
+    return `Sort by ${label} ${direction === 'asc' ? 'descending' : 'ascending'}`;
   }
 
   function setPageSize(value: string) {
@@ -140,7 +140,7 @@
         <tr>
           {#each routeCoverageColumns as column}
             <th scope="col" aria-sort={sortCol === column.key ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'}>
-              <button type="button" on:click={() => toggleSort(column.key)} aria-label={sortLabel(column.key)}>
+              <button type="button" on:click={() => toggleSort(column.key)} aria-label={sortLabel(column.key, sortCol, sortDir)}>
                 {column.label}{#if sortCol === column.key} <span aria-hidden="true">{sortDir === 'asc' ? '↑' : '↓'}</span>{/if}
               </button>
             </th>

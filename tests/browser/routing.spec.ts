@@ -146,6 +146,9 @@ test('discovers referenced listener hostnames with scoped filters and sorts ever
         'aria-sort',
         direction === 'asc' ? 'ascending' : 'descending',
       );
+      await expect(header.getByRole('button')).toHaveAccessibleName(
+        `Sort by ${label.toLowerCase()} ${direction === 'asc' ? 'descending' : 'ascending'}`,
+      );
       await expect(table.locator('tbody .route-coverage__resource')).toHaveText(order[direction]);
     }
   }
